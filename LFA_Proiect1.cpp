@@ -25,7 +25,6 @@ struct words
 	char word[256], current_state;
 }v[1001];
 
-
 void is_accepted(char word[], int current_state)
 {
 	int i, j, k, l;
@@ -34,6 +33,7 @@ void is_accepted(char word[], int current_state)
 	char list_of_outputs[101] = { 0 };	// caractere afisate
 	int cont1 = 0;
 	int cont2 = 0;
+
 	while (ok == true)
 	{
 		path[cont1] = current_state;	// memorare drum
@@ -49,7 +49,7 @@ void is_accepted(char word[], int current_state)
 		if (remember == 0)
 		{
 			for (j = 0; j < n_last_states && stop == 0; j++)
-				if ((current_state == last_state[j])&&strlen(word)==0)
+				if ((current_state == last_state[j]) && strlen(word) == 0)
 				{
 					// daca starea finala este o stare curenta si am ajuns la ultima litera, cuvantul este acceptat
 					fout << "DA\n";
@@ -100,7 +100,6 @@ int main()
 	fin >> n_last_states; // numarul starilor finale
 	for (i = 0; i < n_last_states; i++)
 		fin >> last_state[i]; // stari finale
-
 	fin >> n_strings; // numarul cuvintelor
 
 	for (i = 0; i < n_strings; i++)
@@ -109,5 +108,6 @@ int main()
 		v[i].current_state = first_state; // starea curenta
 		is_accepted(v[i].word, v[i].current_state); // apelare subprogram care verifica daca este acceptat sau nu cuvantul 
 	}
+
 	return 0;
 }
