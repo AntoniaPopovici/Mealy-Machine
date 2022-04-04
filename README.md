@@ -1,0 +1,1 @@
+Programul memorează un automat Mealy și verifică dacă acesta acceptă cuvintele scrise de utilizator în fișierul de input. În fișierul de output sunt scrise (pentru fiecare cuvânt) DA sau NU, precum și traseul parcurs, după caz.
